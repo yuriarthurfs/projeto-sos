@@ -5,9 +5,9 @@ import pandas as pd
 
 #Inicializa sessão do Boto3
 session = boto3.Session(
-    aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"],
-    region_name=st.secrets["AWS_DEFAULT_REGION"]
+    aws_access_key_id=st.secrets["aws"]["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=st.secrets["aws"]["AWS_SECRET_ACCESS_KEY"],
+    region_name=st.secrets["aws"]["AWS_DEFAULT_REGION"]
 )
 
 #Inicializa DynamoDB
