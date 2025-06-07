@@ -11,7 +11,7 @@ session = boto3.Session(
 )
 
 #Inicializa DynamoDB
-dynamodb = boto3.resource('dynamodb', region_name=region)
+dynamodb = session.resource('dynamodb')
 tabela = dynamodb.Table('QueriesSugestoes')
 
 st.set_page_config(page_title="Análise de Queries SQL", layout="wide")
