@@ -3,8 +3,15 @@ import boto3
 from datetime import datetime, timezone
 import pandas as pd
 
+#Inicializa sessão do Boto3
+session = boto3.Session(
+    aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"],
+    region_name=st.secrets["AWS_DEFAULT_REGION"]
+)
+
 #Inicializa DynamoDB
-dynamodb = boto3.resource('dynamodb')
+dynamodb = boto3.resource('dynamodb', region_name=region)
 tabela = dynamodb.Table('QueriesSugestoes')
 
 st.set_page_config(page_title="Análise de Queries SQL", layout="wide")
